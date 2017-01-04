@@ -1,3 +1,4 @@
+include .env
 DOCKER_COMPOSE  ?= docker-compose
 
 UNAME_S := $(shell uname -s)
@@ -15,8 +16,8 @@ bash:
 up:
 	$(DOCKER_COMPOSE) up -d;\
 
-setup:
-	node ./bin/setup
+setup-db:
+	docker exec loopbackboilerplate_db_1 sh -c 'exec mysql -uroot -p$(MYSQL_ROOT_PASSWORD) < ./var/boilerplate/setup.sql'
 
 open:
 	$(OPEN_CMD) http://$(DOCKER_HOST_IP):3000/explorer;\
