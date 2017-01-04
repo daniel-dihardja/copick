@@ -28,7 +28,7 @@ var t2m = (function() {
      *	generate a models from a table
      */
     function generate(targetTable, targetDir) {
-        return new Promise(function(resolve, reject) {
+        return new Promise((resolve, reject) => {
             if(! targetTable) {
                 console.log('targetTable can not be empty');
                 return reject('422');
@@ -44,7 +44,7 @@ var t2m = (function() {
             var modelConfigFile = path.resolve(__dirname, "../server/model-config.json");
 
 
-            ds.discoverSchemas(targetTable, {relations:false}, function(err, schema) {
+            ds.discoverSchemas(targetTable, {relations:false}, (err, schema) => {
 
                 if(err) {
                     return reject(err);
