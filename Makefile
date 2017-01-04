@@ -19,7 +19,7 @@ up:
 setup-db:
 	docker exec loopbackboilerplate_db_1 sh -c 'exec mysql -uroot -p$(MYSQL_ROOT_PASSWORD) < ./var/boilerplate/setup.sql'
 
-setup-models:
+update-models:
 	node ./bin/table-to-model project app schema language document document_translation
 
 open:
