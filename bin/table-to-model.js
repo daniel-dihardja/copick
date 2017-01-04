@@ -146,21 +146,16 @@ var t2m = (function() {
 
 })();
 
-var tables = [];
-for(var i=2; i<process.argv.length; i++) {
-    tables.push(process.argv[i]);
-}
-
 var promises = [];
-tables.map((table) => {
-    promises.push(t2m.generate(table));
+process.argv.map((table, index) => {
+    if(index > 1) promises.push(t2m.generate(table));
 });
 
-Promise.all(promises).then(function(res) {
+Promise.all(promises).then((res) => {
     console.log('completed!');
     t2m.close();
 })
- .catch(function(err) {
+ .catch((err) => {
      console.log(err);
      t2m.close();
 });
