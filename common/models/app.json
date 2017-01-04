@@ -39,6 +39,21 @@
                 "dataScale": 0,
                 "nullable": "N"
             }
+        },
+        "name": {
+            "type": "String",
+            "required": false,
+            "length": 120,
+            "precision": null,
+            "scale": null,
+            "mysql": {
+                "columnName": "name",
+                "dataType": "varchar",
+                "dataLength": 120,
+                "dataPrecision": null,
+                "dataScale": null,
+                "nullable": "Y"
+            }
         }
     },
     "acls": [

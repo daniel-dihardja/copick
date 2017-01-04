@@ -14,9 +14,6 @@
       "./mixins"
     ]
   },
-  "User": {
-    "dataSource": "mysqlDs"
-  },
   "AccessToken": {
     "dataSource": "mysqlDs",
     "public": false
@@ -32,6 +29,10 @@
   "Role": {
     "dataSource": "mysqlDs",
     "public": false
+  },
+  "User": {
+    "dataSource": "mysqlDs",
+    "public": true
   },
   "Language": {
     "dataSource": "mysqlDs",

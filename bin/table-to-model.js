@@ -146,8 +146,13 @@ var t2m = (function() {
 
 })();
 
+//--------------------------//
+// entry point
+//--------------------------//
+
 var promises = [];
 process.argv.map((table, index) => {
+    // ignore first 2 node args
     if(index > 1) promises.push(t2m.generate(table));
 });
 
