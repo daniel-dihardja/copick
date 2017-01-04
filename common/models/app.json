@@ -1,0 +1,74 @@
+{
+    "name": "App",
+    "options": {
+        "idInjection": false,
+        "mysql": {
+            "schema": "boilerplate",
+            "table": "app"
+        },
+        "relations": {}
+    },
+    "properties": {
+        "id": {
+            "type": "Number",
+            "required": true,
+            "length": null,
+            "precision": 10,
+            "scale": 0,
+            "id": 1,
+            "mysql": {
+                "columnName": "id",
+                "dataType": "int",
+                "dataLength": null,
+                "dataPrecision": 10,
+                "dataScale": 0,
+                "nullable": "N"
+            }
+        },
+        "projectId": {
+            "type": "Number",
+            "required": true,
+            "length": null,
+            "precision": 10,
+            "scale": 0,
+            "mysql": {
+                "columnName": "project_id",
+                "dataType": "int",
+                "dataLength": null,
+                "dataPrecision": 10,
+                "dataScale": 0,
+                "nullable": "N"
+            }
+        }
+    },
+    "acls": [
+        {
+            "accessType": "EXECUTE",
+            "principalType": "ROLE",
+            "principalId": "$unauthenticated",
+            "permission": "DENY",
+            "property": "create"
+        },
+        {
+            "accessType": "EXECUTE",
+            "principalType": "ROLE",
+            "principalId": "$unauthenticated",
+            "permission": "DENY",
+            "property": "updateAttributes"
+        },
+        {
+            "accessType": "EXECUTE",
+            "principalType": "ROLE",
+            "principalId": "$unauthenticated",
+            "permission": "DENY",
+            "property": "updateAll"
+        },
+        {
+            "accessType": "EXECUTE",
+            "principalType": "ROLE",
+            "principalId": "$unauthenticated",
+            "permission": "DENY",
+            "property": "deleteById"
+        }
+    ]
+}

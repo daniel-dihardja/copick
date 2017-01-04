@@ -1,0 +1,30 @@
+[
+  {
+    "accessType": "EXECUTE",
+    "principalType": "ROLE",
+    "principalId": "$unauthenticated",
+    "permission": "DENY",
+    "property": "create"
+  },
+  {
+    "accessType": "EXECUTE",
+    "principalType": "ROLE",
+    "principalId": "$unauthenticated",
+    "permission": "DENY",
+    "property": "updateAttributes"
+  },
+  {
+    "accessType": "EXECUTE",
+    "principalType": "ROLE",
+    "principalId": "$unauthenticated",
+    "permission": "DENY",
+    "property": "updateAll"
+  },
+  {
+    "accessType": "EXECUTE",
+    "principalType": "ROLE",
+    "principalId": "$unauthenticated",
+    "permission": "DENY",
+    "property": "deleteById"
+  }
+]

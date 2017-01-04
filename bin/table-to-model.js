@@ -5,7 +5,7 @@
  * Created by danieldihardja on 23/06/16.
  */
 
-var gen = function() {
+var t2m = (function() {
 
     var path    = require('path');
     var app     = require(path.resolve(__dirname, '../server/server'));
@@ -28,138 +28,108 @@ var gen = function() {
      *	generate a models from a table
      */
     function generate(targetTable, targetDir) {
-        var defer = Promise.pending();
-
-        if(! targetTable) {
-            return console.err('targetTable can not be empty');
-        }
-
-        if(! targetDir) {
-            targetDir = "";
-        }
-        else targetDir = targetDir + '/';
-
-
-        var modelPath = "../common/models/";
-        var modelConfigFile = path.resolve(__dirname, "../server/model-config.json");
-
-
-        ds.discoverSchemas(targetTable, {relations:false}, function(err, schema) {
-
-            if(err) {
-                return console.log('err', err);
+        return new Promise(function(resolve, reject) {
+            if(! targetTable) {
+                console.log('targetTable can not be empty');
+                return reject('422');
             }
 
-            for(var key in schema) {
+            if(! targetDir) {
+                targetDir = "";
+            }
+            else targetDir = targetDir + '/';
 
-                var table = schema[key];
 
-                var modelName = table.name;
-                var modelNameDashCase = camelToDash(modelName);
+            var modelPath = "../common/models/";
+            var modelConfigFile = path.resolve(__dirname, "../server/model-config.json");
 
-                // 1. create the model module
-                var fileContent = 'module.exports = function(/*'+modelName+'*/){};';
-                var fileDir = path.resolve(__dirname, modelPath + targetDir);
-                var fileName = path.resolve(__dirname, modelPath +  targetDir + modelNameDashCase + ".js");
 
-                if(! fs.existsSync(fileDir)) {
-                    fs.mkdirSync(fileDir);
+            ds.discoverSchemas(targetTable, {relations:false}, function(err, schema) {
+
+                if(err) {
+                    return reject(err);
                 }
 
-                if(! fs.existsSync(fileName)) {
-                    fs.writeFileSync(fileName, fileContent);
-                    console.log('created', fileName);
-                }
+                for(var key in schema) {
 
-                // 2. create the model json file
-                fileName = path.resolve(__dirname, modelPath + targetDir + modelNameDashCase + ".json");
+                    var table = schema[key];
 
-                if(fs.existsSync(fileName)) {
-                    var currJSON = JSON.parse(fs.readFileSync(fileName));
+                    var modelName = table.name;
+                    var modelNameDashCase = camelToDash(modelName);
 
-                    // properties to keep
+                    // 1. create the model module
+                    var fileContent = 'module.exports = function(/*'+modelName+'*/){};';
+                    var fileDir = path.resolve(__dirname, modelPath + targetDir);
+                    var fileName = path.resolve(__dirname, modelPath +  targetDir + modelNameDashCase + ".js");
 
-                    if(currJSON['base']) {
-                        table['base'] = currJSON['base'];
-                    }
-                    if(currJSON['acls']) {
-                        table['acls'] = currJSON['acls']
+                    if(! fs.existsSync(fileDir)) {
+                        fs.mkdirSync(fileDir);
                     }
 
-                    if(currJSON['options']['relations']) {
-                        table['options']['relations'] = currJSON['options']['relations'];
+                    if(! fs.existsSync(fileName)) {
+                        fs.writeFileSync(fileName, fileContent);
+                        console.log('created', fileName);
+                    }
+
+                    // 2. create the model json file
+                    fileName = path.resolve(__dirname, modelPath + targetDir + modelNameDashCase + ".json");
+
+                    if(fs.existsSync(fileName)) {
+                        var currJSON = JSON.parse(fs.readFileSync(fileName));
+
+                        // properties to keep
+
+                        if(currJSON['base']) {
+                            table['base'] = currJSON['base'];
+                        }
+                        if(currJSON['acls']) {
+                            table['acls'] = currJSON['acls']
+                        }
+
+                        if(currJSON['options']['relations']) {
+                            table['options']['relations'] = currJSON['options']['relations'];
+                        }
+                        else {
+                            table['options']['relations'] = {};
+                        }
                     }
                     else {
-                        table['options']['relations'] = {};
+                        table['acls'] = require('./default-acls.json');
                     }
-                }
-                else {
-                    table['acls'] = [
-                        {
-                            "accessType": "EXECUTE",
-                            "principalType": "ROLE",
-                            "principalId": "$unauthenticated",
-                            "permission": "DENY",
-                            "property": "create"
-                        },
-                        {
-                            "accessType": "EXECUTE",
-                            "principalType": "ROLE",
-                            "principalId": "$unauthenticated",
-                            "permission": "DENY",
-                            "property": "updateAttributes"
-                        },
-                        {
-                            "accessType": "EXECUTE",
-                            "principalType": "ROLE",
-                            "principalId": "$unauthenticated",
-                            "permission": "DENY",
-                            "property": "updateAll"
-                        },
-                        {
-                            "accessType": "EXECUTE",
-                            "principalType": "ROLE",
-                            "principalId": "$unauthenticated",
-                            "permission": "DENY",
-                            "property": "deleteById"
+
+                    fileContent= JSON.stringify(table, null, 4);
+                    fs.writeFileSync(fileName, fileContent);
+
+                    // 3. update the model config
+
+
+                    var cfg = JSON.parse(fs.readFileSync(modelConfigFile));
+
+                    var sources = cfg['_meta']['sources'];
+                    var modelDir = '../common/models/' + targetDir.toLowerCase();
+
+                    var exists = false;
+                    for(var i=0; i<sources.length; i++) {
+                        var s = sources[i];
+                        if(s == modelDir) {
+                            exists = true;
+                            break;
                         }
-                    ]
-                }
-
-                fileContent= JSON.stringify(table, null, 4);
-                fs.writeFileSync(fileName, fileContent);
-
-                // 3. update the model config
-
-
-                var cfg = JSON.parse(fs.readFileSync(modelConfigFile));
-
-                var sources = cfg['_meta']['sources'];
-                var modelDir = '../common/models/' + targetDir.toLowerCase();
-
-                var exists = false;
-                for(var i=0; i<sources.length; i++) {
-                    var s = sources[i];
-                    if(s == modelDir) {
-                        exists = true;
-                        break;
                     }
+
+                    if(! exists) sources.push(modelDir);
+
+                    cfg[modelName] = {
+                        dataSource:'mysqlDs',
+                        public:true
+                    };
+
+                    fs.writeFileSync(modelConfigFile, JSON.stringify(cfg, null, 2));
+                    console.log(modelName, ' generated');
                 }
-
-                if(! exists) sources.push(modelDir);
-
-                cfg[modelName] = {
-                    dataSource:'mysqlDs',
-                    public:true
-                };
-
-                fs.writeFileSync(modelConfigFile, JSON.stringify(cfg, null, 2));
-                console.log(modelName, ' generated');
-            }
-            defer.resolve();
+                resolve();
+            });
         });
-
-        return defer.promise;
     }
 
     /**
@@ -173,5 +143,24 @@ var gen = function() {
         generate: generate,
         close: close
     }
-};
 
+})();
+
+var tables = [];
+for(var i=2; i<process.argv.length; i++) {
+    tables.push(process.argv[i]);
+}
+
+var promises = [];
+tables.map((table) => {
+    promises.push(t2m.generate(table));
+});
+
+Promise.all(promises).then(function(res) {
+    console.log('completed!');
+    t2m.close();
+})
+ .catch(function(err) {
+     console.log(err);
+     t2m.close();
+});

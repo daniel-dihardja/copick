@@ -4,7 +4,8 @@
       "loopback/common/models",
       "loopback/server/models",
       "../common/models",
-      "./models"
+      "./models",
+      "../common/models/"
     ],
     "mixins": [
       "loopback/common/mixins",
@@ -31,5 +32,29 @@
   "Role": {
     "dataSource": "mysqlDs",
     "public": false
+  },
+  "Language": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Project": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "DocumentTranslation": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "App": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Document": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Schema": {
+    "dataSource": "mysqlDs",
+    "public": true
   }
 }
