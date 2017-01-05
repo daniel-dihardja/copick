@@ -4,18 +4,18 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import {Project} from '../services/project';
+import {Project} from '../services/client-models';
 
 class DashboardPage extends React.Component{
 
     componentDidMount() {
-        Project.create({name: 'p1'}).then((project) => {
-            console.log('project', project);
-            project.name = 'joe';
-            return project.save();
+        Project.create({name: 'p1'}).then((p) => {
+            console.log(p);
+            p.name = 'p4';
+            return p.save();
         })
-        .then(function(res) {
-            console.log(res);
+        .then((p) => {
+            console.log(p);
         })
     }
 

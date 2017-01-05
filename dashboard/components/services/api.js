@@ -4,19 +4,30 @@
 
 import Promise from 'bluebird';
 
-export const api = {
+export const $api = {
 
     baseURL: '',
-    token: '',
 
-    post: function(endPoint, params) {
-        return new Promise(function(resolve, reject) {
+    post: (endPoint, params) => {
+        return new Promise((resolve, reject) => {
             resolve();
         });
     },
 
-    get: function(endPoint, filter) {
-        return new Promise(function(resolve, reject) {
+    get: (endPoint, filter) => {
+        return new Promise((resolve, reject) => {
+            resolve();
+        });
+    },
+
+    put: (endPoint, params) => {
+        return new Promise((resolve, reject) => {
+            resolve();
+        });
+    },
+
+    delete: (endPoint, params) => {
+        return new Promise((resolve, reject) => {
             resolve();
         });
     }
