@@ -16,6 +16,7 @@ System.config({
   map: {
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
+    "bluebird": "npm:bluebird@3.4.7",
     "core-js": "npm:core-js@1.2.7",
     "css": "github:systemjs/plugin-css@0.1.32",
     "material-ui": "npm:material-ui@0.16.6",
@@ -85,6 +86,9 @@ System.config({
     "npm:babel-runtime@6.20.0": {
       "core-js": "npm:core-js@2.4.1",
       "regenerator-runtime": "npm:regenerator-runtime@0.10.1"
+    },
+    "npm:bluebird@3.4.7": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:browserify-zlib@0.1.4": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
