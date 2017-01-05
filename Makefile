@@ -27,6 +27,9 @@ open:
 	$(OPEN_CMD) http://$(DOCKER_HOST_IP):3000/admin;\
 	$(OPEN_CMD) http://$(DOCKER_HOST_IP):5984/_utils;\
 
+open-bs:
+	browser-sync start --server 'dashboard' --files 'dashboard'
+
 build:
 	$(DOCKER_COMPOSE) build
 
