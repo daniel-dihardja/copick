@@ -39,6 +39,7 @@
     },
     "configFile": "dashboard/jspm_config.js",
     "dependencies": {
+      "bluebird": "npm:bluebird@^3.4.7",
       "css": "github:systemjs/plugin-css@^0.1.32",
       "material-ui": "npm:material-ui@^0.16.6",
       "react": "npm:react@^15.4.1",
