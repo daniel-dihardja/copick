@@ -7,6 +7,9 @@ import './style.css!';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
+import Drawer from 'material-ui/Drawer';
+
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
@@ -30,7 +33,15 @@ class App extends React.Component {
     render() {
         return(
             <MuiThemeProvider>
-                <Ace/>
+                <div>
+                    <Drawer open={true} className="pd-20">
+                        <h1 className="main">Boilerplate</h1>
+                        <p>Generic CMS</p>
+                    </Drawer>
+                    <div className="page">
+                        <Ace/>
+                    </div>
+                </div>
             </MuiThemeProvider>
         );
     }

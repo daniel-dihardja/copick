@@ -14,16 +14,18 @@ System.config({
   },
 
   map: {
-    "ace": "github:ajaxorg/ace-builds@1.2.6",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "bluebird": "npm:bluebird@3.4.7",
+    "brace": "npm:brace@0.9.1",
     "core-js": "npm:core-js@1.2.7",
     "css": "github:systemjs/plugin-css@0.1.32",
     "material-ui": "npm:material-ui@0.16.6",
     "react": "npm:react@15.4.1",
+    "react-ace": "npm:react-ace@4.1.1",
     "react-dom": "npm:react-dom@15.4.1",
     "react-tap-event-plugin": "npm:react-tap-event-plugin@2.0.1",
+    "react-treeview-mui": "npm:react-treeview-mui@0.1.2",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
     },
@@ -90,6 +92,11 @@ System.config({
     },
     "npm:bluebird@3.4.7": {
       "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:brace@0.9.1": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "w3c-blob": "npm:w3c-blob@0.0.1"
     },
     "npm:browserify-zlib@0.1.4": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
@@ -167,6 +174,9 @@ System.config({
       "node-fetch": "npm:node-fetch@1.6.3",
       "whatwg-fetch": "npm:whatwg-fetch@2.0.1"
     },
+    "npm:lodash.isequal@4.4.0": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:lodash.merge@4.6.0": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
@@ -233,6 +243,13 @@ System.config({
     "npm:punycode@1.3.2": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
+    "npm:react-ace@4.1.1": {
+      "brace": "npm:brace@0.9.1",
+      "lodash.isequal": "npm:lodash.isequal@4.4.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "react": "npm:react@15.4.1",
+      "react-dom": "npm:react-dom@15.4.1"
+    },
     "npm:react-addons-create-fragment@15.4.1": {
       "react": "npm:react@15.4.1"
     },
@@ -256,6 +273,11 @@ System.config({
     },
     "npm:react-tap-event-plugin@2.0.1": {
       "fbjs": "npm:fbjs@0.8.8",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "react": "npm:react@15.4.1",
+      "react-dom": "npm:react-dom@15.4.1"
+    },
+    "npm:react-treeview-mui@0.1.2": {
       "process": "github:jspm/nodelibs-process@0.1.2",
       "react": "npm:react@15.4.1",
       "react-dom": "npm:react-dom@15.4.1"
@@ -329,6 +351,10 @@ System.config({
     },
     "npm:vm-browserify@0.0.4": {
       "indexof": "npm:indexof@0.0.1"
+    },
+    "npm:w3c-blob@0.0.1": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:warning@3.0.0": {
       "loose-envify": "npm:loose-envify@1.3.0",

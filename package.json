@@ -39,13 +39,15 @@
     },
     "configFile": "dashboard/jspm_config.js",
     "dependencies": {
-      "ace": "github:ajaxorg/ace-builds@^1.2.6",
       "bluebird": "npm:bluebird@^3.4.7",
+      "brace": "npm:brace@^0.9.1",
       "css": "github:systemjs/plugin-css@^0.1.32",
       "material-ui": "npm:material-ui@^0.16.6",
       "react": "npm:react@^15.4.1",
+      "react-ace": "npm:react-ace@^4.1.1",
       "react-dom": "npm:react-dom@^15.4.1",
-      "react-tap-event-plugin": "npm:react-tap-event-plugin@^2.0.1"
+      "react-tap-event-plugin": "npm:react-tap-event-plugin@^2.0.1",
+      "react-treeview-mui": "npm:react-treeview-mui@^0.1.2"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
