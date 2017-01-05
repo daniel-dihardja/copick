@@ -25,16 +25,16 @@
                 "nullable": "N"
             }
         },
-        "nameId": {
+        "name": {
             "type": "String",
             "required": false,
-            "length": 45,
+            "length": 120,
             "precision": null,
             "scale": null,
             "mysql": {
-                "columnName": "name_id",
+                "columnName": "name",
                 "dataType": "varchar",
-                "dataLength": 45,
+                "dataLength": 120,
                 "dataPrecision": null,
                 "dataScale": null,
                 "nullable": "Y"
@@ -43,13 +43,13 @@
         "schema": {
             "type": "String",
             "required": false,
-            "length": 512,
+            "length": 65535,
             "precision": null,
             "scale": null,
             "mysql": {
                 "columnName": "schema",
-                "dataType": "varchar",
-                "dataLength": 512,
+                "dataType": "text",
+                "dataLength": 65535,
                 "dataPrecision": null,
                 "dataScale": null,
                 "nullable": "Y"
