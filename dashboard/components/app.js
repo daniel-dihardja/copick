@@ -2,18 +2,24 @@
  * Created by danieldihardja on 04/01/17.
  */
 
-import '../jspm_packages/github/twbs/bootstrap@4.0.0-alpha.5/css/bootstrap.css!';
+
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Button, ButtonGroup} from 'reactstrap';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import RaisedButton from 'material-ui/RaisedButton';
+
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 class App extends React.Component {
     render() {
         return(
-            <ButtonGroup>
-                <Button color="danger">App 1</Button>
-            </ButtonGroup>
+            <MuiThemeProvider>
+                <RaisedButton label="Default" />
+            </MuiThemeProvider>
         );
     }
 }
