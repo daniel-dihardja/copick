@@ -14,6 +14,7 @@ System.config({
   },
 
   map: {
+    "ace": "github:ajaxorg/ace-builds@1.2.6",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "bluebird": "npm:bluebird@3.4.7",

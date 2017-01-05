@@ -2,7 +2,7 @@
  * Created by danieldihardja on 04/01/17.
  */
 
-
+import './style.css!';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -17,6 +17,8 @@ import {$api} from './services/api';
 
 // Pages
 import DashboardPage from './pages/dashboard';
+import {Schema} from './pages/schema';
+import Ace from './pages/ace';
 
 class App extends React.Component {
 
@@ -28,7 +30,7 @@ class App extends React.Component {
     render() {
         return(
             <MuiThemeProvider>
-                <DashboardPage/>
+                <Ace/>
             </MuiThemeProvider>
         );
     }
