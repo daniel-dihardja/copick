@@ -14,18 +14,29 @@ System.config({
   },
 
   map: {
+    "angular": "github:angular/bower-angular@1.6.1",
+    "angular-animate": "github:angular/bower-angular-animate@1.6.1",
+    "angular-aria": "github:angular/bower-angular-aria@1.6.1",
+    "angular-material": "github:angular/bower-material@1.1.1",
+    "angular-ui-router": "github:angular-ui/angular-ui-router-bower@0.4.2",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
-    "bluebird": "npm:bluebird@3.4.7",
-    "brace": "npm:brace@0.9.1",
     "core-js": "npm:core-js@1.2.7",
     "css": "github:systemjs/plugin-css@0.1.32",
-    "material-ui": "npm:material-ui@0.16.6",
-    "react": "npm:react@15.4.1",
-    "react-ace": "npm:react-ace@4.1.1",
-    "react-dom": "npm:react-dom@15.4.1",
-    "react-tap-event-plugin": "npm:react-tap-event-plugin@2.0.1",
-    "react-treeview-mui": "npm:react-treeview-mui@0.1.2",
+    "styled-components": "npm:styled-components@1.2.1",
+    "text": "github:systemjs/plugin-text@0.0.9",
+    "github:angular/bower-angular-animate@1.6.1": {
+      "angular": "github:angular/bower-angular@1.6.1"
+    },
+    "github:angular/bower-angular-aria@1.6.1": {
+      "angular": "github:angular/bower-angular@1.6.1"
+    },
+    "github:angular/bower-material@1.1.1": {
+      "angular": "github:angular/bower-angular@1.6.1",
+      "angular-animate": "github:angular/bower-angular-animate@1.6.1",
+      "angular-aria": "github:angular/bower-angular-aria@1.6.1",
+      "css": "github:systemjs/plugin-css@0.1.32"
+    },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
     },
@@ -90,14 +101,6 @@ System.config({
       "core-js": "npm:core-js@2.4.1",
       "regenerator-runtime": "npm:regenerator-runtime@0.10.1"
     },
-    "npm:bluebird@3.4.7": {
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:brace@0.9.1": {
-      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "w3c-blob": "npm:w3c-blob@0.0.1"
-    },
     "npm:browserify-zlib@0.1.4": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -117,6 +120,13 @@ System.config({
       "isarray": "npm:isarray@1.0.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
+    "npm:buffer@5.0.2": {
+      "base64-js": "npm:base64-js@1.2.0",
+      "ieee754": "npm:ieee754@1.1.8"
+    },
+    "npm:colors@0.5.1": {
+      "util": "github:jspm/nodelibs-util@0.1.0"
+    },
     "npm:core-js@1.2.7": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
@@ -131,6 +141,19 @@ System.config({
     },
     "npm:core-util-is@1.0.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
+    },
+    "npm:css-color-list@0.0.1": {
+      "css-color-names": "npm:css-color-names@0.0.1"
+    },
+    "npm:css-color-names@0.0.1": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.2"
+    },
+    "npm:css-to-react-native@1.0.6": {
+      "css-color-list": "npm:css-color-list@0.0.1",
+      "fbjs": "npm:fbjs@0.8.8",
+      "nearley": "npm:nearley@2.7.10"
     },
     "npm:domain-browser@1.1.7": {
       "events": "github:jspm/nodelibs-events@0.1.1",
@@ -150,6 +173,15 @@ System.config({
       "setimmediate": "npm:setimmediate@1.0.5",
       "ua-parser-js": "npm:ua-parser-js@0.7.12"
     },
+    "npm:glamor@2.20.20": {
+      "babel-runtime": "npm:babel-runtime@6.20.0",
+      "fbjs": "npm:fbjs@0.8.8",
+      "object-assign": "npm:object-assign@4.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:has-flag@1.0.0": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:https-browserify@0.0.0": {
       "http": "github:jspm/nodelibs-http@1.7.1"
     },
@@ -167,22 +199,19 @@ System.config({
       "bowser": "npm:bowser@1.6.0",
       "hyphenate-style-name": "npm:hyphenate-style-name@1.0.2"
     },
+    "npm:is-function@1.0.1": {
+      "events": "github:jspm/nodelibs-events@0.1.1",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:is-plain-object@2.0.1": {
+      "isobject": "npm:isobject@1.0.2"
+    },
     "npm:isarray@1.0.0": {
       "systemjs-json": "github:systemjs/plugin-json@0.1.2"
     },
     "npm:isomorphic-fetch@2.2.1": {
       "node-fetch": "npm:node-fetch@1.6.3",
       "whatwg-fetch": "npm:whatwg-fetch@2.0.1"
-    },
-    "npm:lodash.isequal@4.4.0": {
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:lodash.merge@4.6.0": {
-      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:lodash.throttle@4.1.1": {
-      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:loose-envify@1.3.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
@@ -192,22 +221,17 @@ System.config({
       "systemjs-json": "github:systemjs/plugin-json@0.1.2",
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
-    "npm:material-ui@0.16.6": {
-      "babel-runtime": "npm:babel-runtime@6.20.0",
-      "inline-style-prefixer": "npm:inline-style-prefixer@2.0.5",
-      "keycode": "npm:keycode@2.1.8",
-      "lodash.merge": "npm:lodash.merge@4.6.0",
-      "lodash.throttle": "npm:lodash.throttle@4.1.1",
+    "npm:nearley@2.7.10": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "nomnom": "npm:nomnom@1.6.2",
+      "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "react": "npm:react@15.4.1",
-      "react-addons-create-fragment": "npm:react-addons-create-fragment@15.4.1",
-      "react-addons-transition-group": "npm:react-addons-transition-group@15.4.1",
-      "react-dom": "npm:react-dom@15.4.1",
-      "react-event-listener": "npm:react-event-listener@0.4.0",
-      "react-tap-event-plugin": "npm:react-tap-event-plugin@2.0.1",
-      "recompose": "npm:recompose@0.21.2",
-      "simple-assign": "npm:simple-assign@0.1.0",
-      "warning": "npm:warning@3.0.0"
+      "railroad-diagrams": "npm:railroad-diagrams@1.0.0",
+      "randexp": "npm:randexp@0.4.4",
+      "readline": "github:jspm/nodelibs-readline@0.1.0",
+      "stream": "github:jspm/nodelibs-stream@0.1.0",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.2",
+      "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:node-fetch@1.6.3": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -219,6 +243,12 @@ System.config({
       "url": "github:jspm/nodelibs-url@0.1.0",
       "util": "github:jspm/nodelibs-util@0.1.0",
       "zlib": "github:jspm/nodelibs-zlib@0.1.0"
+    },
+    "npm:nomnom@1.6.2": {
+      "colors": "npm:colors@0.5.1",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "underscore": "npm:underscore@1.4.4"
     },
     "npm:pako@0.2.9": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -243,44 +273,10 @@ System.config({
     "npm:punycode@1.3.2": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:react-ace@4.1.1": {
-      "brace": "npm:brace@0.9.1",
-      "lodash.isequal": "npm:lodash.isequal@4.4.0",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "react": "npm:react@15.4.1",
-      "react-dom": "npm:react-dom@15.4.1"
-    },
-    "npm:react-addons-create-fragment@15.4.1": {
-      "react": "npm:react@15.4.1"
-    },
-    "npm:react-addons-shallow-compare@15.4.1": {
-      "react": "npm:react@15.4.1"
-    },
-    "npm:react-addons-transition-group@15.4.1": {
-      "react": "npm:react@15.4.1"
-    },
-    "npm:react-dom@15.4.1": {
-      "fbjs": "npm:fbjs@0.8.8",
-      "loose-envify": "npm:loose-envify@1.3.0",
-      "object-assign": "npm:object-assign@4.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "react": "npm:react@15.4.1"
-    },
-    "npm:react-event-listener@0.4.0": {
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "react-addons-shallow-compare": "npm:react-addons-shallow-compare@15.4.1",
-      "warning": "npm:warning@3.0.0"
-    },
-    "npm:react-tap-event-plugin@2.0.1": {
-      "fbjs": "npm:fbjs@0.8.8",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "react": "npm:react@15.4.1",
-      "react-dom": "npm:react-dom@15.4.1"
-    },
-    "npm:react-treeview-mui@0.1.2": {
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "react": "npm:react@15.4.1",
-      "react-dom": "npm:react-dom@15.4.1"
+    "npm:randexp@0.4.4": {
+      "discontinuous-range": "npm:discontinuous-range@1.0.0",
+      "ret": "npm:ret@0.1.13",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.2"
     },
     "npm:react@15.4.1": {
       "fbjs": "npm:fbjs@0.8.8",
@@ -310,14 +306,6 @@ System.config({
       "string_decoder": "npm:string_decoder@0.10.31",
       "util-deprecate": "npm:util-deprecate@1.0.2"
     },
-    "npm:recompose@0.21.2": {
-      "change-emitter": "npm:change-emitter@0.1.2",
-      "fbjs": "npm:fbjs@0.8.8",
-      "hoist-non-react-statics": "npm:hoist-non-react-statics@1.2.0",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "react": "npm:react@15.4.1",
-      "symbol-observable": "npm:symbol-observable@1.0.4"
-    },
     "npm:regenerator-runtime@0.10.1": {
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
@@ -332,6 +320,22 @@ System.config({
     },
     "npm:string_decoder@0.10.31": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
+    },
+    "npm:styled-components@1.2.1": {
+      "buffer": "npm:buffer@5.0.2",
+      "css-to-react-native": "npm:css-to-react-native@1.0.6",
+      "fbjs": "npm:fbjs@0.8.8",
+      "glamor": "npm:glamor@2.20.20",
+      "inline-style-prefixer": "npm:inline-style-prefixer@2.0.5",
+      "is-function": "npm:is-function@1.0.1",
+      "is-plain-object": "npm:is-plain-object@2.0.1",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "react": "npm:react@15.4.1",
+      "supports-color": "npm:supports-color@3.1.2"
+    },
+    "npm:supports-color@3.1.2": {
+      "has-flag": "npm:has-flag@1.0.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:ua-parser-js@0.7.12": {
       "systemjs-json": "github:systemjs/plugin-json@0.1.2"
@@ -351,14 +355,6 @@ System.config({
     },
     "npm:vm-browserify@0.0.4": {
       "indexof": "npm:indexof@0.0.1"
-    },
-    "npm:w3c-blob@0.0.1": {
-      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:warning@3.0.0": {
-      "loose-envify": "npm:loose-envify@1.3.0",
-      "process": "github:jspm/nodelibs-process@0.1.2"
     }
   }
 });

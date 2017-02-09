@@ -1,4 +1,4 @@
-FROM node:6.9.2
+FROM node:6.9.3
 RUN npm install -g strongloop
 USER node
 COPY package.json /home/node/package.json

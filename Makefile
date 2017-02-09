@@ -30,6 +30,9 @@ open:
 open-bs:
 	browser-sync start --server 'dashboard' --files 'dashboard'
 
+css:
+	./node_modules/.bin/node-sass ./dashboard/sass/main.scss ./dashboard/assets/css/style.css -w ./dashboard
+
 build:
 	$(DOCKER_COMPOSE) build
 

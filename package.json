@@ -1,5 +1,5 @@
 {
-  "name": "loopback-boilerplate",
+  "name": "copick",
   "version": "1.0.0",
   "main": "server/server.js",
   "scripts": {
@@ -23,8 +23,10 @@
     "chai": "^3.5.0",
     "eslint": "^2.13.1",
     "eslint-config-loopback": "^4.0.0",
-    "jspm": "^0.16.48",
+    "jspm": "^0.16.51",
     "mocha": "^3.2.0",
+    "ng-annotate": "^1.2.1",
+    "node-sass": "^4.4.0",
     "nsp": "^2.1.0"
   },
   "repository": {
@@ -32,22 +34,20 @@
     "url": ""
   },
   "license": "UNLICENSED",
-  "description": "loopback-boilerplate",
+  "description": "copick",
   "jspm": {
     "directories": {
       "baseURL": "dashboard"
     },
     "configFile": "dashboard/jspm_config.js",
     "dependencies": {
-      "bluebird": "npm:bluebird@^3.4.7",
-      "brace": "npm:brace@^0.9.1",
+      "angular": "github:angular/bower-angular@^1.6.1",
+      "angular-animate": "github:angular/bower-angular-animate@^1.6.1",
+      "angular-aria": "github:angular/bower-angular-aria@^1.6.1",
+      "angular-material": "github:angular/bower-material@^1.1.1",
+      "angular-ui-router": "github:angular-ui/angular-ui-router-bower@^0.4.2",
       "css": "github:systemjs/plugin-css@^0.1.32",
-      "material-ui": "npm:material-ui@^0.16.6",
-      "react": "npm:react@^15.4.1",
-      "react-ace": "npm:react-ace@^4.1.1",
-      "react-dom": "npm:react-dom@^15.4.1",
-      "react-tap-event-plugin": "npm:react-tap-event-plugin@^2.0.1",
-      "react-treeview-mui": "npm:react-treeview-mui@^0.1.2"
+      "text": "github:systemjs/plugin-text@^0.0.9"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",

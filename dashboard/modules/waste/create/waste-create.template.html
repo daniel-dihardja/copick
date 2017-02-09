@@ -1,0 +1,81 @@
+<md-content>
+    <md-card flex-gt-sm="100" flex-gt-md="50"  layout="column" layout-padding>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Create a waste item</span>
+            </md-card-title-text>
+        </md-card-title>
+
+        <md-card-content>
+            <md-input-container layout="row">
+                <div>
+                    <label>Type</label>
+                </div>
+                <md-radio-group layout="row" style="margin-top: 48px; margin-bottom: 32px">
+                    <md-radio-button value="elektro">Elektro</md-radio-button>
+                    <md-radio-button value="sonstiges">Sonstiges</md-radio-button>
+                </md-radio-group>
+            </md-input-container>
+
+            <!-- md-input-container layout="row" layout-align="center" -->
+            <div>
+                <md-autocomplete style="border: none" class="md-no-underline" flex
+                    md-search-text="vm.electroWasteSearchText"
+                    md-selected-item="vm.selectedItem"
+                    md-selected-item-change="vm.selectedItemChange(item)"
+                    md-search-text-change="vm.searchTextChange(vm.electroWasteSearchText)"
+                    md-items="item in vm.querySearch(vm.electroWasteSearchText)"
+                    md-item-text="item.display"
+                    md-min-length="0"
+                    md-floating-label="Item Name">
+                    <md-item-template>
+                        <span md-highlight-text="vm.electroWasteSearchText" md-highlight-flags="^i">{{item.display}}</span>
+                    </md-item-template>
+
+                </md-autocomplete>
+            </div>
+            <!-- /md-input-container -->
+
+
+            <div layout="row">
+                <div flex layout="row" layout-align="space-between center">
+                    <Label>Breite (cm)</Label>
+                    <md-select ng-model="vm.form.width" placeholder="0" class="md-no-underline" style="margin-right: 64px;">
+                        <md-option ng-repeat="value in vm.centimeters" value="{{value}}">{{value}}</md-option>
+                    </md-select>
+                </div>
+                <div flex layout="row" layout-align="space-between center">
+                    <label>Höhe (cm)</label>
+                    <md-select ng-model="vm.form.height" placeholder="0" class="md-no-underline" style="margin-right: 64px;">
+                        <md-option ng-repeat="value in vm.centimeters" value="{{value}}">{{value}}</md-option>
+                    </md-select>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div flex layout="row" layout-align="space-between center">
+                    <Label>Tiefe (cm)</Label>
+                    <md-select ng-model="vm.form.depth" placeholder="0" class="md-no-underline" style="margin-right: 64px;">
+                        <md-option ng-repeat="value in vm.centimeters" value="{{value}}">{{value}}</md-option>
+                    </md-select>
+                </div>
+                <div flex layout="row" layout-align="space-between center">
+                    <label>Gewicht (Kg)</label>
+                    <md-select ng-model="vm.form.weight" placeholder="0" class="md-no-underline" style="margin-right: 64px;">
+                        <md-option ng-repeat="value in vm.kilos" value="{{value}}">{{value}}</md-option>
+                    </md-select>
+                </div>
+            </div>
+        </md-card-content>
+
+        <div>
+            <md-chips ng-model="vm.tags" name="tags" readonly="faslse"
+                      md-removable="ctrl.removable" md-max-chips="10" placeholder="Add a tag" />
+        </div>
+
+        <md-card-actions layout="row" layout-align="end">
+            <md-button class="md-raised" ui-sref="app.waste">Cancel</md-button>
+            <md-button class="md-raised md-primary" ui-sref="app.waste">Create</md-button>
+        </md-card-actions>
+    </md-card>
+</md-content>
