@@ -37,41 +37,34 @@
             <!-- /md-input-container -->
 
 
-            <div layout="row">
+            <div layout="column">
                 <div flex layout="row" layout-align="space-between center">
                     <Label>Breite (cm)</Label>
-                    <md-select ng-model="vm.form.width" placeholder="0" class="md-no-underline" style="margin-right: 64px;">
+                    <md-select ng-model="vm.form.width" placeholder="0" class="md-no-underline">
                         <md-option ng-repeat="value in vm.centimeters" value="{{value}}">{{value}}</md-option>
                     </md-select>
                 </div>
                 <div flex layout="row" layout-align="space-between center">
                     <label>Höhe (cm)</label>
-                    <md-select ng-model="vm.form.height" placeholder="0" class="md-no-underline" style="margin-right: 64px;">
+                    <md-select ng-model="vm.form.height" placeholder="0" class="md-no-underline">
                         <md-option ng-repeat="value in vm.centimeters" value="{{value}}">{{value}}</md-option>
                     </md-select>
                 </div>
-            </div>
 
-            <div layout="row">
                 <div flex layout="row" layout-align="space-between center">
                     <Label>Tiefe (cm)</Label>
-                    <md-select ng-model="vm.form.depth" placeholder="0" class="md-no-underline" style="margin-right: 64px;">
+                    <md-select ng-model="vm.form.depth" placeholder="0" class="md-no-underline">
                         <md-option ng-repeat="value in vm.centimeters" value="{{value}}">{{value}}</md-option>
                     </md-select>
                 </div>
-                <div flex layout="row" layout-align="space-between center">
-                    <label>Gewicht (Kg)</label>
-                    <md-select ng-model="vm.form.weight" placeholder="0" class="md-no-underline" style="margin-right: 64px;">
-                        <md-option ng-repeat="value in vm.kilos" value="{{value}}">{{value}}</md-option>
-                    </md-select>
-                </div>
             </div>
+
         </md-card-content>
 
-        <div>
+        <!--div>
             <md-chips ng-model="vm.tags" name="tags" readonly="faslse"
                       md-removable="ctrl.removable" md-max-chips="10" placeholder="Add a tag" />
-        </div>
+        </div-->
 
         <md-card-actions layout="row" layout-align="end">
             <md-button class="md-raised" ui-sref="app.waste">Cancel</md-button>

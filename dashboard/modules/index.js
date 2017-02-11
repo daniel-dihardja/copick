@@ -3,6 +3,7 @@
  */
 
 import 'angular-material/angular-material.css!'
+import 'angular-material-data-table/dist/md-data-table.css!';
 import '../assets/css/style.css!'
 
 import angular from 'angular';
@@ -11,16 +12,18 @@ import uiRouter from 'angular-ui-router';
 import 'angular-animate';
 import 'angular-aria';
 import 'angular-material';
+import 'angular-material-data-table';
 
 import app from './app/app';
-import wasteType from './waste-type/waste-type.module';
+import user from './user/user.module';
 import waste from './waste/waste.module';
 
 let angularModule = angular.module('copick', [
     uiRouter,
     'ngMaterial',
+    'md.data.table',
     app.name,
-    wasteType.name,
+    user.name,
     waste.name
 ])
 .config(['$urlRouterProvider',

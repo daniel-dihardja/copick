@@ -14,10 +14,11 @@ System.config({
   },
 
   map: {
-    "angular": "github:angular/bower-angular@1.6.1",
-    "angular-animate": "github:angular/bower-angular-animate@1.6.1",
-    "angular-aria": "github:angular/bower-angular-aria@1.6.1",
+    "angular": "github:angular/bower-angular@1.6.2",
+    "angular-animate": "github:angular/bower-angular-animate@1.6.2",
+    "angular-aria": "github:angular/bower-angular-aria@1.6.2",
     "angular-material": "github:angular/bower-material@1.1.1",
+    "angular-material-data-table": "npm:angular-material-data-table@0.10.10",
     "angular-ui-router": "github:angular-ui/angular-ui-router-bower@0.4.2",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
@@ -25,16 +26,19 @@ System.config({
     "css": "github:systemjs/plugin-css@0.1.32",
     "styled-components": "npm:styled-components@1.2.1",
     "text": "github:systemjs/plugin-text@0.0.9",
-    "github:angular/bower-angular-animate@1.6.1": {
-      "angular": "github:angular/bower-angular@1.6.1"
+    "github:angular/bower-angular-animate@1.6.2": {
+      "angular": "github:angular/bower-angular@1.6.2"
     },
-    "github:angular/bower-angular-aria@1.6.1": {
-      "angular": "github:angular/bower-angular@1.6.1"
+    "github:angular/bower-angular-aria@1.6.2": {
+      "angular": "github:angular/bower-angular@1.6.2"
+    },
+    "github:angular/bower-angular-messages@1.6.2": {
+      "angular": "github:angular/bower-angular@1.6.2"
     },
     "github:angular/bower-material@1.1.1": {
-      "angular": "github:angular/bower-angular@1.6.1",
-      "angular-animate": "github:angular/bower-angular-animate@1.6.1",
-      "angular-aria": "github:angular/bower-angular-aria@1.6.1",
+      "angular": "github:angular/bower-angular@1.6.2",
+      "angular-animate": "github:angular/bower-angular-animate@1.6.2",
+      "angular-aria": "github:angular/bower-angular-aria@1.6.2",
       "css": "github:systemjs/plugin-css@0.1.32"
     },
     "github:jspm/nodelibs-assert@0.1.0": {
@@ -83,6 +87,18 @@ System.config({
     },
     "github:jspm/nodelibs-zlib@0.1.0": {
       "browserify-zlib": "npm:browserify-zlib@0.1.4"
+    },
+    "npm:angular-material-data-table@0.10.10": {
+      "angular": "npm:angular@1.6.2",
+      "angular-material": "npm:angular-material@1.1.3",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:angular-material@1.1.3": {
+      "angular": "github:angular/bower-angular@1.6.2",
+      "angular-animate": "github:angular/bower-angular-animate@1.6.2",
+      "angular-aria": "github:angular/bower-angular-aria@1.6.2",
+      "angular-messages": "github:angular/bower-angular-messages@1.6.2",
+      "css": "github:systemjs/plugin-css@0.1.32"
     },
     "npm:asap@2.0.5": {
       "domain": "github:jspm/nodelibs-domain@0.1.0",
