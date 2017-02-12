@@ -11,6 +11,9 @@ import service from './waste.service';
 import createController from './create/waste-create.controller';
 import createTemplate from './create/waste-create.template.html!text'
 
+import statusController from './status/waste-status.controller';
+import statusTemplate from './status/waste-status.template.html!text'
+
 let waste = angular.module('waste', [uiRouter])
     .config(['$stateProvider', ($stateProvider) => {
         $stateProvider
@@ -25,6 +28,12 @@ let waste = angular.module('waste', [uiRouter])
                 controllerAs: 'vm',
                 template: createTemplate,
                 url: '/waste-create'
+            })
+            .state('app.waste-status', {
+                controller: statusController,
+                controllerAs: 'vm',
+                template: statusTemplate,
+                url: '/waste-status'
             })
     }])
     .service('$waste', service);

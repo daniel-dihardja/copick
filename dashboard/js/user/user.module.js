@@ -11,6 +11,8 @@ import loginTemplate from './login/login.template.html!text';
 import registerController from './register/register.controller';
 import registerTemplate from './register/register.template.html!text';
 
+import registerConfirmTemplate from './register/register-confirm.html!text';
+
 let user = angular.module('user', [uiRouter])
     .config(['$stateProvider', ($stateProvider) => {
         $stateProvider
@@ -25,6 +27,10 @@ let user = angular.module('user', [uiRouter])
                 controllerAs: 'vm',
                 template: registerTemplate,
                 url: '/register'
+            })
+            .state('app.register-confirm', {
+                template: registerConfirmTemplate,
+                url: '/register-confirm'
             })
     }]);
 

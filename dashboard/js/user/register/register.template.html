@@ -1,0 +1,39 @@
+<md-content>
+    <md-card flex-gt-sm="100" flex-gt-md="50"  layout="column" layout-padding>
+        <md-card-title-text>
+            <span class="md-headline">Register</span>
+        </md-card-title-text>
+
+        <md-card-content layout="column">
+            <md-input-container layout="row">
+                <md-checkbox ng-model="vm.type">Als Recycling Unternehmen anmelden</md-checkbox>
+
+            </md-input-container>
+
+            <md-input-container>
+                <label>Email</label>
+                <input ng-model="vm.email">
+            </md-input-container>
+
+            <md-input-container>
+                <label>Password</label>
+                <input ng-model="vm.password1" type="password">
+            </md-input-container>
+
+            <md-input-container>
+                <label>Password</label>
+                <input ng-model="vm.password2" type="password">
+            </md-input-container>
+
+            <md-input-container>
+                <label>Address</label>
+                <input ng-model="vm.address">
+            </md-input-container>
+
+        </md-card-content>
+
+        <md-card-actions layout="row" layout-align="end">
+            <md-button class="md-raised md-primary" ui-sref="app.register-confirm">Register</md-button>
+        </md-card-actions>
+    </md-card>
+</md-content>

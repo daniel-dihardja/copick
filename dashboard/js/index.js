@@ -14,8 +14,9 @@ import 'angular-aria';
 import 'angular-material';
 import 'angular-material-data-table';
 
-import app from './app/app';
+import app from './app/app.module';
 import user from './user/user.module';
+import welcome from './welcome/welcome.module';
 import waste from './waste/waste.module';
 
 let angularModule = angular.module('copick', [
@@ -23,13 +24,18 @@ let angularModule = angular.module('copick', [
     'ngMaterial',
     'md.data.table',
     app.name,
+    welcome.name,
     user.name,
     waste.name
 ])
 .config(['$urlRouterProvider',
         '$httpProvider',
         '$mdThemingProvider', ($urlRouterProvider, $httpProvider, $mdThemingProvider) => {
-    $urlRouterProvider.otherwise('/app');
+
+        $mdThemingProvider.theme('default')
+            .primaryPalette('teal')
+            .accentPalette('brown')
+    $urlRouterProvider.otherwise('/app/welcome');
 }]);
 
 export default angularModule;
