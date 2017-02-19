@@ -34,7 +34,10 @@ let pickupRoute = angular.module('route', [uiRouter])
                 controller: editController,
                 controllerAs: 'vm',
                 template: editTemplate,
-                url: '/route-edit'
+                url: '/route-edit',
+                params: {
+                    route: null
+                }
             })
 
     }])

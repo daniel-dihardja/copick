@@ -4,23 +4,16 @@
 
 class RouteEditController {
 
-    constructor($route, $state) {
+    constructor($route, $state, $stateParams) {
         this.$route = $route;
         this.$state = $state;
+        this.$stateParams = $stateParams;
 
-        this.form = {};
+        console.log($stateParams);
 
-        this.create.bind(this);
+
+        this.route = $stateParams.route;
     }
 
-    create() {
-        this.$route.create({
-            name: this.form.name || '...',
-            addresses: 0,
-            length: '0 km',
-            duration: '0 min'
-        });
-        this.$state.go('app.route');
-    }
 }
 export default RouteEditController;
