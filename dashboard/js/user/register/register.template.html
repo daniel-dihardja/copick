@@ -6,28 +6,43 @@
 
         <md-card-content layout="column">
             <md-input-container layout="row">
-                <md-checkbox ng-model="vm.type">Als Recycling Unternehmen anmelden</md-checkbox>
+                <md-checkbox ng-model="vm.form.isRecyclingCompany">Als Recycling Unternehmen anmelden</md-checkbox>
 
             </md-input-container>
 
             <md-input-container>
                 <label>Email</label>
-                <input ng-model="vm.email">
+                <input ng-model="vm.form.email">
             </md-input-container>
 
             <md-input-container>
                 <label>Password</label>
-                <input ng-model="vm.password1" type="password">
+                <input ng-model="vm.form.password1" type="password">
             </md-input-container>
 
             <md-input-container>
                 <label>Password</label>
-                <input ng-model="vm.password2" type="password">
+                <input ng-model="vm.form.password2" type="password">
             </md-input-container>
 
             <md-input-container>
                 <label>Address</label>
-                <input ng-model="vm.address">
+                <input ng-model="vm.form.address">
+            </md-input-container>
+
+            <md-input-container ng-if="vm.form.isRecyclingCompany">
+                <label>Telefon</label>
+                <input ng-model="vm.form.phone">
+            </md-input-container>
+
+            <md-input-container ng-if="vm.form.isRecyclingCompany">
+                <label>Website</label>
+                <input ng-model="vm.form.website">
+            </md-input-container>
+
+            <md-input-container ng-if="vm.form.isRecyclingCompany">
+                <label>Beschreibung</label>
+                <textarea ng-model="vm.form.description"></textarea>
             </md-input-container>
 
         </md-card-content>

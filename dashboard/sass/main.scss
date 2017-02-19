@@ -1,1 +1,5 @@
-@import "../modules/app/app.scss";
+@import "../js/app/app",
+"./globals",
+"../js/user/user",
+"../js/waste/waste",
+"../js/waste-map/waste-map";

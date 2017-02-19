@@ -18,6 +18,8 @@ import app from './app/app.module';
 import user from './user/user.module';
 import welcome from './welcome/welcome.module';
 import waste from './waste/waste.module';
+import wasteMap from './waste-map/waste-map.module';
+import route from './route/route.module';
 
 let angularModule = angular.module('copick', [
     uiRouter,
@@ -26,7 +28,9 @@ let angularModule = angular.module('copick', [
     app.name,
     welcome.name,
     user.name,
-    waste.name
+    waste.name,
+    wasteMap.name,
+    route.name
 ])
 .config(['$urlRouterProvider',
         '$httpProvider',
@@ -34,7 +38,8 @@ let angularModule = angular.module('copick', [
 
         $mdThemingProvider.theme('default')
             .primaryPalette('teal')
-            .accentPalette('brown')
+            .accentPalette('brown');
+
     $urlRouterProvider.otherwise('/app/welcome');
 }]);
 

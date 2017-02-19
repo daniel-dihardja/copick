@@ -5,19 +5,21 @@
         </md-card-title-text>
 
         <md-card-content layout="column">
-            <md-input-container>
-                <label>Email</label>
-                <input ng-model="vm.email">
-            </md-input-container>
+            <form layout="column">
+                <md-input-container>
+                    <label>Email</label>
+                    <input ng-model="vm.form.email">
+                </md-input-container>
 
-            <md-input-container>
-                <label>Password</label>
-                <input ng-model="vm.password" type="password">
-            </md-input-container>
+                <md-input-container>
+                    <label>Password</label>
+                    <input ng-model="vm.form.password" type="password">
+                </md-input-container>
+            </form>
         </md-card-content>
 
         <md-card-actions layout="row" layout-align="end">
-            <md-button class="md-raised md-primary" ui-sref="app.waste">Login</md-button>
+            <md-button class="md-raised md-primary" type="submit" ng-click="vm.login()">Login</md-button>
         </md-card-actions>
     </md-card>
 </md-content>

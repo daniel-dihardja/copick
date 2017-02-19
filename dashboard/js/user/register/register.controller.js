@@ -3,7 +3,7 @@
  */
 class RegisterController {
     constructor() {
-
+        this.form = {};
     }
 }
 export default RegisterController;
