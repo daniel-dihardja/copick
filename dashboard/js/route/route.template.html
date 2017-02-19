@@ -1,7 +1,7 @@
 <md-content class="pickup-route">
     <md-card flex-gt-sm="100" flex-gt-md="50"  layout="column" layout-padding>
         <md-card-title-text layout="column">
-            <span class="md-headline">Pickup Route List</span>
+            <span class="md-headline">Route List</span>
             <span class="md-subline ui-hint">** rc view **</span>
         </md-card-title-text>
 
@@ -14,6 +14,7 @@
                             <th md-column>Addresses</th>
                             <th md-column>Length</th>
                             <th md-column>Duration</th>
+                            <th md-column>Action</th>
                         </tr>
                     </thead>
                     <tbody md-body>
@@ -22,6 +23,10 @@
                             <td md-cell>{{item.addresses}}</td>
                             <td md-cell>{{item.length}}</td>
                             <td md-cell>{{item.duration}}</td>
+                            <td md-cell>
+                                <md-button class="md-icon-button" ui-sref="app.route-edit"><md-icon>edit</md-icon></md-button>
+                                <md-button class="md-icon-button" ng-click="vm.deleteItem($index)"><md-icon>delete</md-icon></md-button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
