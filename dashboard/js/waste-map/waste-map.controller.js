@@ -13,6 +13,16 @@ class WasteMapController {
         ];
 
         this.selectedItems = [];
+
+        this.color = {blue: 0};
+
+        this.items = [
+            {address: 'Falbenhennenstr. 3 70180 Stuttgart'},
+            {address: 'Falbenhennenstr. 3 70180 Stuttgart'},
+            {address: 'Falbenhennenstr. 3 70180 Stuttgart'},
+            {address: 'Falbenhennenstr. 3 70180 Stuttgart'},
+            {address: 'Falbenhennenstr. 3 70180 Stuttgart'}
+        ];
     }
 }
 export default WasteMapController;

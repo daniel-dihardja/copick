@@ -13,10 +13,11 @@ class LoginController {
 
     login() {
         if(this.form.email == 'r') {
-            this.$state.go('app.route');
+            this.$state.go('app.waste-map');
             return;
         }
         this.$state.go('app.waste');
     }
 }
+
 export default LoginController;

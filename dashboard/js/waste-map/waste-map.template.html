@@ -1,38 +1,68 @@
-<md-content class="waste-map">
-    <md-card flex-gt-sm="100" flex-gt-md="50"  layout="column" layout-padding>
-        <md-card-title-text layout="column">
-            <span class="md-headline">Waste Map</span>
-            <span class="md-subline">** res com view **</span>
-        </md-card-title-text>
+<md-content class="route-edit">
+    <div layout="row">
+        <div flex>
+            <md-card flex layout="column" layout-padding>
+                <md-card-title>
+                    <md-card-title-text layout="column">
+                        <span class="md-headline">Picked Addresses</span>
+                        <span class="md-subline ui-hint">** picked addresses are added to the list **</span>
+                    </md-card-title-text>
+                </md-card-title>
 
-        <md-card-content>
+                <md-card-content>
+                    <md-table-container>
+                        <table md-table md-row-select multiple ng-model="vm.selectedItems">
+                            <thead md-head md-order="vm.query.order">
+                            <tr md-row>
+                                <th md-column>Addesses</th>
+                                <th md-column>Status</th>
+                            </tr>
+                            </thead>
+                            <tbody md-body>
+                            <tr md-row md-select="item" md-select-id="name" md-auto-select ng-repeat="item in vm.items">
+                                <td md-cell>{{item.address}}</td>
+                                <td md-cell>
+                                    <md-button class="md-icon-button" ng-click="vm.deleteItem($index)"><md-icon>timelapse</md-icon></md-button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </md-table-container>
 
-            <div class="map" flex>
+                </md-card-content>
 
-            </div>
+                <md-card-actions layout="row" layout-align="end">
 
-            <md-table-container>
-                <table md-table md-row-select multiple ng-model="vm.selectedItems">
-                    <thead md-head md-order="vm.query.order">
-                        <tr md-row>
-                            <th md-column>Name</th>
-                            <th md-column>Type</th>
-                            <th md-column>Created</th>
-                        </tr>
-                    </thead>
-                    <tbody md-body>
-                        <tr md-row md-select="item" md-select-id="name" md-auto-select ng-repeat="item in vm.wasteItems">
-                            <td md-cell>{{item.name}}</td>
-                            <td md-cell>{{item.type}}</td>
-                            <td md-cell>{{item.created}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </md-table-container>
-        </md-card-content>
+                </md-card-actions>
+            </md-card>
+        </div>
+        <div flex>
+            <md-card flex layout="column" layout-padding>
+                <md-card-title>
+                    <md-card-title-text layout="column">
+                        <span class="md-headline">Waste Map</span>
+                        <span class="md-subline ui-hint">** pick addresses from the map **</span>
+                    </md-card-title-text>
+                </md-card-title>
 
-        <md-card-actions layout="row" layout-align="end">
-            <md-button class="md-raised md-primary">New</md-button>
-        </md-card-actions>
-    </md-card>
+                <md-card-content>
+                    <div class="map"></div>
+                    <div>
+                        <md-slider-container>
+                            <span class="md-body-1">Radius</span>
+                            <md-slider flex ng-model="vm.color.blue" min="0" max="300" aria-label="blue" id="blue-slider" class="md-primary">
+                            </md-slider>
+                            <md-input-container layout="column">
+                                <input flex type="number" ng-model="vm.color.blue" aria-label="blue" aria-controls="blue-slider">
+                            </md-input-container>
+                            <span>Km</span>
+                        </md-slider-container>
+                    </div>
+
+                </md-card-content>
+
+
+            </md-card>
+        </div>
+    </div>
 </md-content>
