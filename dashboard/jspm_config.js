@@ -17,6 +17,7 @@ System.config({
     "angular": "github:angular/bower-angular@1.6.2",
     "angular-animate": "github:angular/bower-angular-animate@1.6.2",
     "angular-aria": "github:angular/bower-angular-aria@1.6.2",
+    "angular-google-maps": "github:angular-ui/angular-google-maps@2.4.1",
     "angular-material": "github:angular/bower-material@1.1.1",
     "angular-material-data-table": "npm:angular-material-data-table@0.10.10",
     "angular-ui-router": "github:angular-ui/angular-ui-router-bower@0.4.2",

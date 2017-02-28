@@ -14,7 +14,7 @@ class WasteMapController {
 
         this.selectedItems = [];
 
-        this.color = {blue: 0};
+        this.color = {blue: 10};
 
         this.items = [
             {address: 'Falbenhennenstr. 3 70180 Stuttgart'},

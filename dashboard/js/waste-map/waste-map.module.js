@@ -6,6 +6,8 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import controller from './waste-map.controller';
 import template from './waste-map.template.html!text';
+import mapDirective from './waste-map.directive';
+
 
 let wasteMap = angular.module('waste-map', [uiRouter])
     .config(['$stateProvider', ($stateProvider) => {
@@ -17,5 +19,6 @@ let wasteMap = angular.module('waste-map', [uiRouter])
                 url: '/waste-map'
             })
 
-    }]);
+    }])
+    .directive('wMap', mapDirective);
 export default wasteMap;

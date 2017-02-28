@@ -14,12 +14,14 @@ import 'angular-aria';
 import 'angular-material';
 import 'angular-material-data-table';
 
+
+
+
 import app from './app/app.module';
 import user from './user/user.module';
 import welcome from './welcome/welcome.module';
 import waste from './waste/waste.module';
 import wasteMap from './waste-map/waste-map.module';
-
 
 let angularModule = angular.module('copick', [
     uiRouter,

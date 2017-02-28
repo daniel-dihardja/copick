@@ -1,10 +1,27 @@
 <md-content class="app">
     <md-toolbar md-scroll-shrink class="md-whiteframe-4dp">
         <div class="md-toolbar-tools">
-            <h2 ui-sref="app.welcome" style="cursor: pointer"><span><strong>co.pick</strong></span></h2>
+            <h2 ng-click="vm.home()" style="cursor: pointer"><span><strong>co.pick</strong></span></h2>
             <span flex></span>
-            <md-button ui-sref="app.login">Login</md-button>
-            <md-button ui-sref="app.register">Register</md-button>
+
+            <md-button ng-if="! vm.isLoggedIn" ui-sref="app.login">Login</md-button>
+            <md-button ng-if="! vm.isLoggedIn" ui-sref="app.register">Register</md-button>
+
+            <md-menu ng-if="vm.isLoggedIn" md-position-mode="target-right target">
+                <md-button class="md-icon-button" ng-click="$mdMenu.open($event)">
+                    <md-icon>more_vert</md-icon>
+                </md-button>
+                <md-menu-content width="4">
+                    <md-menu-item ng-repeat="item in vm.userMenus">
+                        <md-button ng-click="item.action()">
+                            <div layout="row" flex>
+                                <md-icon>{{item.icon}}</md-icon>
+                                <p flex>{{item.title}}</p>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
         </div>
     </md-toolbar>
     <div ui-view class="content"></div>
